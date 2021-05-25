@@ -8,7 +8,6 @@
 <script>
 
 import QuestionPanel from "../components/QuestionPanel";
-import {Services} from "../js/Services";
 
 export default {
     name: "Quiz",
@@ -82,7 +81,6 @@ export default {
         }
     },
     created() {
-        Services.getQuestions()
         // Reset the results in session storage and load first question
         window.sessionStorage.setItem("quizResults", "")
         if(this.input && this.input.length > 0) {
