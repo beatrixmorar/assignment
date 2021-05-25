@@ -48,10 +48,10 @@ export default {
     },
     watch: {
         /**
-         * When an answer is selected, show result
+         * When an answer is selected, show result/feedback. Changing the answer afterwards is not taken into account.
          */
         picked() {
-            if(this.picked) {
+            if(this.picked && !this.showFeedback) {
                 this.showResult()
             }
         },
