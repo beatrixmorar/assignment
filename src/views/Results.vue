@@ -1,5 +1,5 @@
 <template>
-    <div class="container" style="flex-direction: column">
+    <div class="container">
         <template v-if="stats && stats.length > 0">
             <h1>Your results:</h1>
             <span>{{ message }}</span>

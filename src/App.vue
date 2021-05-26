@@ -1,9 +1,11 @@
 <template>
   <div id="app">
       <header>
-          <img class="logo" src="./assets/logo_head_experts.svg" alt="logo" @click="$router.push('home')">
+          <img class="logo" src="./assets/logo_head_experts.svg" alt="logo" @click="home">
       </header>
-    <router-view></router-view>
+      <div class="main">
+          <router-view></router-view>
+      </div>
       <footer>
           <img class="copyright" src="./assets/a_star_alliance_member.svg" alt="copyright">
       </footer>
@@ -13,21 +15,62 @@
 <script>
 
 export default {
-  name: 'App',
-}
+    name: 'App',
+    methods: {
+        home() {
+            if (this.$route.path != '/home') {
+              this.$router.push('home')
+            }
+        }
+    }
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+:root{
+    --bg-image-url: url('./assets/bg_home.jpg')
 }
 
-body {
-    margin: 0;
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    background-image: var(--bg-image-url);
+    background-size: cover;
+    align-items: center;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}
+
+header {
+    grid-area: header;
 }
 
 footer {
-    height: 1vh;
+    grid-area: footer;
+}
+
+#app > main {
+    grid-area: main;
+    padding: 0px;
+    overflow: auto;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr minmax(0, 600px) 1fr;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header, footer {
+    background-color: white;
 }
 
 img.logo {
@@ -35,22 +78,24 @@ img.logo {
 }
 
 img.copyright {
-    height: 20px;
-    width: auto;
-    margin: 20px 5px 0px;
-    position: fixed;
-    right: 0;
+    max-height: 20px;
+    max-width: 200px;
+    margin: 10px;
+    /*position: fixed;*/
+    /*right: 0;*/
 }
 
 .start-btn {
     background-color: darkblue;
     color: white;
+    padding: 10px 15px;
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85vh;
+    flex-direction: column;
+    color: white;
 }
 </style>

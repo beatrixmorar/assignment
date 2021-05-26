@@ -66,5 +66,7 @@ export default {
 .next-btn {
     background-color: darkblue;
     color: white;
+    position: fixed;
+    right: 15px
 }
 </style>

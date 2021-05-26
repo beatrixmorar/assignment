@@ -1,12 +1,8 @@
 <template>
-<div>
-    <div class="main container" >
-        <div>
-            <h1 style="color: white">World Travel Quiz</h1>
-            <button class="start-btn" @click="startQuiz">Start quiz</button>
-        </div>
+    <div class="container">
+        <h1 class="title">World Travel Quiz</h1>
+        <button class="start-btn" @click="startQuiz">Start quiz</button>
     </div>
-</div>
 </template>
 
 <script>
@@ -22,8 +18,9 @@ export default {
 </script>
 
 <style scoped>
-.main {
-    background-image: url('../assets/bg_home.jpg');
-}
 
+.title {
+    color: white;
+    font-size: 85px;
+}
 </style>

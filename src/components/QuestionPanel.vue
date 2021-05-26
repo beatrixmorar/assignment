@@ -1,5 +1,5 @@
 <template>
- <div class="container question-panel">
+ <div class="container">
      <div style="color: white">
          <span>{{ question.id + ". " + question.text }}</span>
 
@@ -67,12 +67,5 @@ export default {
 </script>
 
 <style scoped>
-.question-panel {
-    background-image: url("../assets/lh-1.jpg");
-}
 
-.next-btn {
-    background-color: darkblue;
-    color: white;
-}
 </style>
