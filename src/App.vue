@@ -3,7 +3,7 @@
       <header>
           <img class="logo" src="./assets/logo_head_experts.svg" alt="logo" @click="home">
       </header>
-      <div class="main">
+      <div class="main" id="main">
           <router-view></router-view>
       </div>
       <footer>
