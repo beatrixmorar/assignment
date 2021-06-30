@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
       <header>
           <img class="logo" src="./assets/logo_head_experts.svg" alt="logo" @click="home">
       </header>
